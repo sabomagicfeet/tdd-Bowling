@@ -6,6 +6,12 @@ public class BowlingGame {
 
     private int score = 0;
 
+    public void roll(int... rolls) {
+        for(int pinsDown : rolls) {
+            roll(pinsDown);
+        }
+    }
+
     public void roll(int pinsDown) {
         // Store the pinsDown number in the array [current roll] and increase the roll
         rolls[roll++] = pinsDown;
