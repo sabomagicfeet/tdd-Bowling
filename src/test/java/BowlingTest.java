@@ -1,23 +1,19 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BowlingTest {
 
-    @Test
-    public void canMakeGame() {
-        BowlingGame bowlingGame = new BowlingGame();
-    }
+    private BowlingGame game;
 
-    @Test
-    public void canRollBall() {
-        BowlingGame game = new BowlingGame();
-        game.roll(0);
+    @BeforeEach
+    public void setUp() {
+        game = new BowlingGame();
     }
 
     @Test
     // Test if game can make the score when all 20 rolled balls fall into the gutter and total score is 0
     public void canScoreGameWhenAllRollIsZero() {
-        BowlingGame game = new BowlingGame();
         int expected = 0;
 
         for(int i = 0; i < 20; i++) {
@@ -32,7 +28,6 @@ public class BowlingTest {
     @Test
     //
     public void canScoreGameWhenAllRollIsOne() {
-        BowlingGame game = new BowlingGame();
         int expected = 20;
 
         for(int i = 0; i < 20; i++) {
