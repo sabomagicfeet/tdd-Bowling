@@ -5,7 +5,13 @@ public class BowlingTest {
 
     @Test
     public void canMakeGame() {
-        BowlingGame bowlingGame = new BowlingGame();
+        BowlingGame game = new BowlingGame();
+    }
+
+    @Test
+    public void canRollBall() {
+        BowlingGame game = new BowlingGame();
+        game.roll(0);
     }
 
 
