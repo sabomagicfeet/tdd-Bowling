@@ -16,7 +16,7 @@ public class BowlingGame {
         int cursor = 0;
 
         for(int frame = 0; frame < 10; frame++) {
-            if(rolls[cursor] + rolls[cursor + 1] == 10) { // Spare
+            if(isSpare(cursor)) { // Spare
                 score = score + 10 + rolls[cursor + 2];
                 cursor += 2; // move cursor to the next Frame
             } else {
@@ -25,5 +25,9 @@ public class BowlingGame {
             }
         }
         return score;
+    }
+
+    private boolean isSpare(int cursor) {
+        return rolls[cursor] + rolls[cursor + 1] == 10;
     }
 }
