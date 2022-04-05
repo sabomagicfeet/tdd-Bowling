@@ -6,6 +6,12 @@ public class BowlingTest {
 
     private BowlingGame game;
 
+    private void roll(int rollBallTimes, int pinsDown) {
+        for(int i = 0; i < rollBallTimes; i++) {
+            game.roll(pinsDown);
+        }
+    }
+
     @BeforeEach
     public void setUp() {
         game = new BowlingGame();
@@ -14,28 +20,15 @@ public class BowlingTest {
     @Test
     // Test if game can make the score when all 20 rolled balls fall into the gutter and total score is 0
     public void canScoreGameWhenAllRollIsZero() {
-        int expected = 0;
-
-        for(int i = 0; i < 20; i++) {
-            game.roll(0);
-        }
-        int actual = game.score();
-
-        Assertions.assertEquals(expected, actual);
-
+        roll(20, 0);
+        Assertions.assertEquals(0, game.score());
     }
 
     @Test
     //
     public void canScoreGameWhenAllRollIsOne() {
-        int expected = 20;
-
-        for(int i = 0; i < 20; i++) {
-            game.roll(1);
-        }
-        int actual = game.score();
-
-        Assertions.assertEquals(expected, actual);
+        roll(20, 1);
+        Assertions.assertEquals(20, game.score());
     }
 
 }
