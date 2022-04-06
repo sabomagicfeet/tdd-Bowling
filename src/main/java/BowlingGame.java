@@ -27,7 +27,7 @@ public class BowlingGame {
                 score = score + 10 + rolls[cursor + 1] + rolls[cursor + 2];
                 cursor += 1;
             }
-            if(isSpare(cursor)) { // Spare
+            else if(isSpare(cursor)) { // Spare
                 score = score + 10 + rolls[cursor + 2];
                 cursor += 2; // move cursor to the next Frame
             } else {
