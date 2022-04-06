@@ -34,4 +34,12 @@ public class BowlingTest {
         Assertions.assertEquals(16, game.score());
     }
 
+    // Test for Strike
+    // 16 + 6 = 22
+    @Test
+    public void canScoreStrikeFollowedByThreeThenThree() {
+        game.roll(10, 3,3, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+        Assertions.assertEquals(22, game.score());
+    }
+
 }
